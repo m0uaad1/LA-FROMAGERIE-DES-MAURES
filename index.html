@@ -1,67 +1,208 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LA FROMAGERIE DES MAURES — Artisan Fromager</title>
+  <meta name="description" content="La Fromagerie des Maures — Fromages artisanaux, affinage traditionnel, et saveurs du terroir Provençal. Pignans, France.">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
+    :root{
+      --primary:#8b5e34;  /* brown cheese crust */
+      --accent:#d4a373;   /* creamy golden */
+      --bg:#faf7f0;       /* cream */
+      --text:#2c2a28;
+      --muted:#645f5b;
+      --card:#ffffff;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
+
+    *{box-sizing:border-box;}
+    body,html{
+      margin:0;padding:0;
+      font-family: "Playfair Display", serif;
+      background:var(--bg);
+      color:var(--text);
     }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+
+    img{max-width:100%;display:block;border-radius:10px;}
+    a{text-decoration:none;color:inherit;}
+    .container{max-width:1100px;margin:0 auto;padding:24px;}
+
+    /* header */
+    header{
+      background:#fff;
+      border-bottom:2px solid var(--accent);
+      position:sticky;top:0;z-index:50;
     }
-    h1, h2 {
-      color: #003366;
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;}
+    .brand{font-size:1.5rem;font-weight:900;color:var(--primary);font-family:"Georgia";}
+    nav a{margin:0 12px;font-weight:600;color:var(--primary);}
+    nav a:hover{color:#000;}
+
+    .cta-btn{
+      background:var(--accent);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:700;
+      transition:0.3s;
     }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
+    .cta-btn:hover{opacity:0.8;}
+
+    /* hero */
+    .hero{
+      display:grid;grid-template-columns:1.1fr .9fr;
+      gap:20px;align-items:center;
+      padding:48px 24px;
+      background:linear-gradient(180deg,#fff,#f5e8d7);
     }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
+    .hero h1{
+      font-size:clamp(28px,4vw,46px);
+      color:var(--primary);
+      margin-bottom:10px;
+      font-family:"Georgia";
+    }
+    .hero p{font-size:1.1rem;color:var(--muted);}
+    .hero-actions{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{
+      background:var(--primary);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.3s;
+    }
+    .btn:hover{opacity:0.9;}
+    .btn.secondary{background:var(--accent);color:#fff;}
+
+    section{padding:56px 24px;}
+    section h2{font-size:clamp(22px,3vw,32px);color:var(--primary);margin-bottom:16px;font-family:"Georgia";}
+    .muted{color:var(--muted);}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+
+    .card{
+      background:var(--card);
+      border:1px solid #e6e2dd;
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+    .card:hover{transform:translateY(-4px);}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    .gallery img{aspect-ratio:4/3;object-fit:cover;}
+
+    .contact-box{
+      background:var(--accent);
+      color:#fff;
+      border-radius:16px;
+      padding:24px;
+      box-shadow:0 6px 12px rgba(0,0,0,0.15);
+    }
+    .contact-actions{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;}
+    .contact-actions a{
+      background:var(--primary);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    footer{
+      background:#8b5e34;
+      color:#fff;text-align:center;padding:18px;font-weight:700;
+    }
+
+    @media(max-width:840px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:1fr;}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
-  </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
+<header>
+  <div class="topbar container">
+    <div class="brand">LA FROMAGERIE DES MAURES</div>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#products">Produits</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#contact" class="cta-btn">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+<section class="hero">
+  <div>
+    <h1>Fromages artisanaux du cœur du Var</h1>
+    <p>
+      Bienvenue à <strong>La Fromagerie des Maures</strong> — terroir, savoir-faire, et tradition fromagère
+      au pied du Massif des Maures.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn">Nos Fromages</a>
+      <a href="#contact" class="btn secondary">Nous Contacter</a>
     </div>
-  </section>
+    <p class="muted" style="margin-top:10px;">+33 7 59 13 37 18 • info@fabrilio.shop</p>
+  </div>
 
-  <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
-  </footer>
+  <div>
+    <img src="https://live.staticflickr.com/5556/14092813367_f1d43b6679_b.jpg" alt="Fromagerie artisanale">
+  </div>
+</section>
+
+<section id="about" class="container">
+  <h2>À propos</h2>
+  <p class="muted">
+    Fabrication artisanale, lait local, et affinage traditionnel. Nous défendons la richesse
+    du terroir provençal à travers des fromages authentiques et élaborés avec passion.
+  </p>
+  <div class="cards" style="margin-top:14px;">
+    <div class="card">Produits fermiers & locaux</div>
+    <div class="card">Méthodes traditionnelles</div>
+    <div class="card">Affinage artisanal</div>
+    <div class="card">Saveurs du Var & Provence</div>
+  </div>
+</section>
+
+<section id="products" class="container">
+  <h2>Nos Spécialités</h2>
+  <div class="cards">
+    <div class="card"><strong>Fromages de chèvre</strong><br>Crémeux & affinés</div>
+    <div class="card"><strong>Fromages affinés</strong><br>Pâte molle & croûte fleurie</div>
+    <div class="card"><strong>Plateaux dégustation</strong><br>Pour événements & boutiques</div>
+  </div>
+</section>
+
+<section id="gallery" class="container">
+  <h2>Galerie</h2>
+  <div class="gallery">
+    <img src="https://i0.wp.com/cdn.sortiraparis.com/images/80/103013/934914-la-fromagerie-du-louvre-fromages.jpg?ssl=1" alt="">
+    <img src="https://data.topquizz.com/distant/question/big/5/6/3/6/1696365_2e8741b771.jpg" alt="">
+    <img src="https://i0.wp.com/cdn.sortiraparis.com/images/80/103013/934914-la-fromagerie-du-louvre-fromages.jpg?ssl=1" alt="">
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <div><strong>Entreprise :</strong> La Fromagerie des Maures</div>
+    <div><strong>Téléphone :</strong> +33 7 59 13 37 18</div>
+    <div><strong>Email :</strong> info@fabrilio.shop</div>
+    <div><strong>Adresse :</strong> ROUTE DE NOTRE DAME DES ANGES, 83790 PIGNANS, France</div>
+    <div class="contact-actions">
+      <a href="mailto:info@fabrilio.shop?subject=Demande%20d%27infos">Email</a>
+      <a href="tel:+33759133718">Appeler</a>
+      <a href="https://wa.me/33759133718" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 LA FROMAGERIE DES MAURES — Tous droits réservés
+</footer>
+
 </body>
 </html>
